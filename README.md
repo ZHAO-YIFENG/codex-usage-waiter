@@ -1,10 +1,33 @@
-# Codex Usage Waiter
+<div align="center">
 
-A Codex plugin that checks your Codex usage and waits until the next credit refresh.
+# ⏳ Codex Usage Waiter
 
-[中文版](README.zh-CN.md)
+A Codex plugin that checks your usage and waits for credit refresh.
 
-## Features
+[English](README.md) | [中文](README.zh-CN.md)
+
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20WSL-lightgrey)
+![Codex](https://img.shields.io/badge/Codex-Plugin-green)
+
+</div>
+
+---
+
+## 📑 Table of Contents
+
+- [Features](#-features)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Scripts](#-scripts)
+- [Parameters](#-parameters)
+- [How It Works](#-how-it-works)
+- [Requirements](#-requirements)
+- [License](#-license)
+
+---
+
+## ✨ Features
 
 - Read current Codex usage via the local app-server API
 - Display usage percentage and reset time for 5h/Weekly limits
@@ -12,9 +35,11 @@ A Codex plugin that checks your Codex usage and waits until the next credit refr
 - Support both Windows Codex Desktop and WSL Codex CLI
 - Dry-run mode to check usage without waiting
 
-## Installation
+---
 
-**Via Marketplace:**
+## 📦 Installation
+
+### Via Marketplace
 
 ```bash
 codex plugin marketplace add ZHAO-YIFENG/codex-usage-waiter
@@ -22,7 +47,7 @@ codex plugin marketplace add ZHAO-YIFENG/codex-usage-waiter
 
 Then install from the plugin directory in Codex.
 
-**Manual Installation:**
+### Manual Installation
 
 1. Clone this repository:
    ```bash
@@ -36,7 +61,9 @@ Then install from the plugin directory in Codex.
 
 3. Restart Codex.
 
-## Usage
+---
+
+## 🚀 Usage
 
 **Check Usage (Dry Run):**
 
@@ -56,7 +83,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\wait_for_next_codex_
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts\get_codex_usage.ps1
 ```
 
-## Scripts
+---
+
+## 📜 Scripts
 
 | Script | Description |
 |--------|-------------|
@@ -64,9 +93,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\get_codex_usage.ps1
 | `wait_for_next_codex_refresh.ps1` | Parse usage, calculate next refresh, optionally wait |
 | `wait_until_credit_refresh.ps1` | Simple blocking wait for a specified duration |
 
-## Parameters
+---
 
-**wait_for_next_codex_refresh.ps1**
+## ⚙️ Parameters
+
+### `wait_for_next_codex_refresh.ps1`
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -77,30 +108,38 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\get_codex_usage.ps1
 | `-MaxWaitSeconds` | Int | 90 | Max allowed wait; -1 for unlimited |
 | `-UsageLine` | String[] | @() | Pre-supplied usage lines |
 
-**get_codex_usage.ps1**
+### `get_codex_usage.ps1`
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
 | `-StartupWaitSeconds` | Int | 60 | Seconds to wait for Codex to start |
 | `-StatusWaitSeconds` | Int | 20 | Seconds to wait for /status output |
 
-## How It Works
+---
+
+## 🔧 How It Works
 
 1. Tries Windows Codex Desktop first, then WSL Codex CLI via app-server API
 2. If app-server fails, falls back to scraping WSL TUI `/status` output
 3. Extracts 5h and Weekly limit lines with reset times
 4. Blocks in terminal until the calculated refresh time
 
-## Requirements
+---
+
+## 📋 Requirements
 
 - Windows with PowerShell 5.1+ or PowerShell Core
 - WSL with Python 3 (for fallback scraping)
 - Codex Desktop or Codex CLI installed
 
-## License
+---
+
+## 📄 License
 
 MIT License - see [LICENSE](LICENSE).
 
-## Author
+---
 
-ZHAO YIFENG
+## 👤 Author
+
+**ZHAO YIFENG** · [GitHub](https://github.com/ZHAO-YIFENG)
