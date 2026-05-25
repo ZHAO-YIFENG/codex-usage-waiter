@@ -1,0 +1,39 @@
+{
+  "name": "codex-usage-waiter",
+  "version": "0.1.0",
+  "description": "Read Codex usage and wait until the next credit refresh.",
+  "author": {
+    "name": "ZHAO YIFENG",
+    "url": "https://github.com/ZHAO-YIFENG"
+  },
+  "homepage": "https://github.com/ZHAO-YIFENG/codex-usage-waiter",
+  "repository": "https://github.com/ZHAO-YIFENG/codex-usage-waiter.git",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "usage",
+    "credits",
+    "refresh",
+    "wait",
+    "rate-limit",
+    "productivity"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codex Usage Waiter",
+    "shortDescription": "Check Codex usage and wait for refresh",
+    "longDescription": "Provides script instructions for checking Codex usage, calculating the next refresh, and blocking in a terminal process until the refresh window.",
+    "developerName": "ZHAO YIFENG",
+    "category": "Productivity",
+    "capabilities": [
+      "Scripts"
+    ],
+    "websiteURL": "https://github.com/ZHAO-YIFENG/codex-usage-waiter",
+    "defaultPrompt": [
+      "Run the Codex usage waiter script",
+      "Check my Codex usage",
+      "Wait until Codex credits refresh"
+    ],
+    "brandColor": "#10A37F"
+  }
+}
